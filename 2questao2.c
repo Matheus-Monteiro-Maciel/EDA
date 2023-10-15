@@ -18,7 +18,6 @@ Tcliente* criaCliente(unsigned int codigo, char nome[41], int idade, float salar
     return p;
 }
 
-
 void imprimeCliente (Tcliente* p){
     if( enderecoValido(p) ) {
         printf("\nCodigo: %u", p->codigo);
@@ -29,18 +28,12 @@ void imprimeCliente (Tcliente* p){
         printf("\nBairro: %s", p->bairro);
         printf("\nCep: %u\n\n", p->cep);
     } else {
-        printf( "Nao ha dados a serem impressos. O cliente nao existe" );
-    }
+        printf( "Nao ha dados a serem impressos. O cliente nao existe" ); }
 } 
-
 
 int enderecoValido( Tcliente *p ){ return p != NULL; }
 
-
 void limpar_buffer(void) {
-    int c;
-    while( (c = getchar() ) != '\n' && c != EOF);
-}
-
+    int c; while( (c = getchar() ) != '\n' && c != EOF); }
 
 void liberaCliente(Tcliente *p) { if (p != NULL) free(p); }
